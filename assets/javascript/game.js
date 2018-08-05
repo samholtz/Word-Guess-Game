@@ -1,6 +1,4 @@
-// var artists = ["zeds dead", "snoop dogg", "rl grime", "skrillex", "keys n krates", "flux pavilion", "seven lions", "kill the noise", "delta heavy", "zhu", "oliver heldens", "anna lunoe", "adventure club", "clozee", "armin van buuren", "big gigantic", "your mother"];
-
-var artists = ['zhu', 'zoe']
+var artists = ["zedsdead", "dmx", "skrillex", "glitchmob", "fluxpavilion", "sevenlions", "flume", "deltaheavy", "zhu", "avicii", "graves", "adventureclub", "clozee", "griz", "mommy", "mija"];
 
 var wins = 0;
 var losses = 0;
