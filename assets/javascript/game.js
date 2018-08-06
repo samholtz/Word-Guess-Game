@@ -2,11 +2,11 @@ var artists = ["zedsdead", "dmx", "skrillex", "glitchmob", "fluxpavilion", "seve
 
 var wins = 0;
 var losses = 0;
-var letters = "";
+var guessedLetters = "";
 var answer = [];
 var guess = [];
 var guesses = 5;
-
+var currentWord = '';
 
 document.getElementById("clicky").addEventListener("click", function () {
     alert("You may begin!");
@@ -14,14 +14,14 @@ document.getElementById("clicky").addEventListener("click", function () {
 
 });
 function pullArtist() {
-    var currentWord = artists[Math.floor(Math.random() * artists.length)];
+    currentWord = artists[Math.floor(Math.random() * artists.length)];
     answer = currentWord.split('');
     guess = '_'.repeat(answer.length).split('');
     document.getElementById("word").innerHTML = guess.join(' ');
     guesses = 5;
     document.getElementById("guesses").innerHTML = guesses;
-    letters = "";
-    document.getElementById("letters").innerHTML = letters;
+    guessedLetters = "";
+    document.getElementById("guessedLetters").innerHTML = guessedLetters;
     console.log(answer);
 }
 
@@ -44,17 +44,17 @@ document.onkeyup = function (event) {
             }
         }
     } else {
-        letters += event.key;
+        guessedLetters += event.key;
         guesses -= 1;
         document.getElementById("guesses").innerHTML = guesses;
-        document.getElementById("letters").innerHTML = letters;
+        document.getElementById("guessedLetters").innerHTML = guessedLetters;
 
     };
 
-    if (letters.length === 5) {
+    if (guessedLetters.length === 5) {
         losses += 1;
         document.getElementById("losses").innerHTML = losses;
-        alert("You have lost");
+        alert("You have lost, your current word was " + currentWord);
         pullArtist();
 
     }
